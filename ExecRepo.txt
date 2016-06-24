@@ -1,0 +1,36 @@
+MyExerciseApplication
+myexerciseapplication
+
+
+select * from OVARIABLE
+select * from OSCREEN
+select * from QTEREPOD.ScreenVarXref where ScreenName = 'CUSSET1'
+
+
+SELECT * FROM "QTEREPOD"."INSCOPEITEM"
+SELECT * FROM "QTEREPOD"."OBJECTLIST"
+SELECT * FROM "QTEREPOD"."OBJECTNODE"
+
+=== 1. ========
+
+SELECT * FROM "QTEREPOD"."OBJECTNODEREL"
+SELECT * FROM "QTEREPOD"."OBJECTNODEREL" where ParentObjectNodeId='15841'
+select * from "QTEREPOD"."OBJECTNODE" where OBJECTNODEID in (select CHILDOBJECTNODEID from "QTEREPOD"."OBJECTNODEREL" where ParentObjectNodeId='15841')
+
+select * from QTEREPOD.MODULEVARXREF where ModuleName ='CBLPARMC'
+select * from QTEREPOD.MODULETABLEXREF where ModuleName ='CBLPARMC'
+
+=== 2. ========
+select * from "QTEREPOD"."OBJECTNODE" where INPUTNAME='MESSAGE-BUFFER'
+
+
+=== 3. ========
+SELECT * FROM "QTEREPOD"."INSCOPEITEM" where TYPE='SCREEN'
+SELECT count(1) FROM "QTEREPOD"."INSCOPEITEM" where TYPE='SCREEN'
+
+
+--モジュールが参照している変数
+select * from QTEREPOD.MODULEVARXREF
+
+--モジュールが参照しているテーブル
+select * from QTEREPOD.MODULETABLEXREF
